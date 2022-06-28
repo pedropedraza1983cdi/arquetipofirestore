@@ -1,0 +1,31 @@
+PROJECT_ID: seventh-botany-349817
+
+spring:
+  application:
+    name: arquetipofirestore
+    cloud:
+      config:
+        namespace: default
+        enabled: true
+        name: Cloud
+        profile: dev, cloud, firestore
+        label: master
+      gcp:
+        credentials:
+          location: classpath:keyfirestore.json
+        firestore:
+          project-id: ${PROJECT_ID:seventh-botany-349817}
+          enabled: true
+service:
+  dateFormat: yyyy-MM-dd hh:mm:ss
+  controller:
+    path: /api/v1/persona
+  message:
+    error:
+      default: Error de microservicio, porfavor intentar más tarde
+      validation: Error en validación de datos
+      file: No se puede leer el archivo de catalogo de errores
+  errorCatalog:
+    path: src/main/resources/errorCatalog.json
+server:
+  port: 8087
