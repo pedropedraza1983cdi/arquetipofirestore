@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.concurrent.ExecutionException;
 
 @RestController
 @CrossOrigin("*")
@@ -19,24 +18,24 @@ public class Controller {
     private PersonService personService;
 
     @GetMapping("/all")
-    public List<User> getAllPerson() throws InterruptedException, ExecutionException {
+    public List<com.nttdata.terpel.arquetipofirestore.model.User> getAllPerson() {
         return personService.retrieveAll();
     }
 
     @GetMapping("/get/{id}")
-    public Optional<User> getPerson(@PathVariable("id") String id) throws InterruptedException, ExecutionException {
+    public Optional<User> getPerson(@PathVariable("id") String id) {
         return personService.get(id);
     }
 
     @PostMapping("/save")
-    public boolean addPerson(@RequestBody User person) throws InterruptedException, ExecutionException {
+    public User addPerson(@RequestBody User person){
         return personService.save(person);
     }
 
     @DeleteMapping("/delete")
-    public String delete(@RequestBody User person) throws InterruptedException, ExecutionException {
+       void delete(@RequestBody User person) {
         personService.delete(person);
-        return "Datos Eliminados";
+
     }
 
 

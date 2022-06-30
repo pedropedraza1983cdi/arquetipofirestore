@@ -8,12 +8,12 @@ import java.util.Optional;
 
 public interface PersonService  {
 
-    public boolean save(User user);
+     User save(User user);
 
-    public List<User> retrieveAll();
+     List<com.nttdata.terpel.arquetipofirestore.model.User> retrieveAll();
 
     Optional<User> get(String documentId);
 
-    String delete(User user);
+    void delete(User user);
 
 }

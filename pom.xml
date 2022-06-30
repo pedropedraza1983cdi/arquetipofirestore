@@ -69,28 +69,10 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
-		<!-- https://cloud.spring.io/spring-cloud-gcp/spring-cloud-gcp.html#_cloud_firestore -->
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-gcp-starter-firestore</artifactId>
-		</dependency>
-
-		<!-- https://cloud.spring.io/spring-cloud-gcp/reference/html/#spring-data-cloud-firestore -->
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-gcp-data-firestore</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.google.cloud</groupId>
-			<artifactId>google-cloud-firestore</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-gcp-data-datastore</artifactId>
-		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-gcp-starter-data-datastore</artifactId>
+			<version>1.2.8.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-beanutils</groupId>
@@ -103,25 +85,6 @@
 			<version>20220320</version>
 		</dependency>
 	</dependencies>
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-gcp-dependencies</artifactId>
-				<version>1.2.2.RELEASE</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
-
-
-	<repositories>
-		<repository>
-			<id>indigid-maven-group</id>
-			<url>http://nexus.everisdigital.com/repository/indigid-maven-group/</url>
-		</repository>
-	</repositories>
 
 	<build>
 		<plugins>

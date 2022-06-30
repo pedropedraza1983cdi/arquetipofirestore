@@ -1,21 +1,20 @@
 package com.nttdata.terpel.arquetipofirestore.persistence.entidades;
 
-import com.google.cloud.firestore.annotation.DocumentId;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.cloud.gcp.data.datastore.core.mapping.Entity;
+import org.springframework.data.annotation.Id;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "1")
+@Entity(name = "books")
 public class User {
 
-    @DocumentId
+    @Id
     private String id;
-    private String username;
-    private String password;
-    private String imageUrl;
-    private String bio;
+    private String author;
+    private String title;
+    private Integer year;
 }

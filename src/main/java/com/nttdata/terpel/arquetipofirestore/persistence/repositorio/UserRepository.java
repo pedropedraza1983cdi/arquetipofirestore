@@ -1,12 +1,8 @@
 package com.nttdata.terpel.arquetipofirestore.persistence.repositorio;
 
-import com.google.cloud.firestore.Firestore;
 import com.nttdata.terpel.arquetipofirestore.persistence.entidades.User;
-import org.springframework.stereotype.Repository;
+import org.springframework.cloud.gcp.data.datastore.repository.DatastoreRepository;
 
-@Repository
-public class UserRepository extends AbstractFirestoreRepository<User> {
-    protected UserRepository(Firestore firestore) {
-        super(firestore, "User");
-    }
+public interface UserRepository extends DatastoreRepository<User,String> {
+
 }
