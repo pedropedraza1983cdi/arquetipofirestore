@@ -8,9 +8,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class EstacionDto {
 
-    private String author;
-    private String title;
-    private Integer year;
+    private boolean acumulacion;
+    private Integer estacion;
+    private boolean reclamacion;
+    private Integer traduccion;
 }

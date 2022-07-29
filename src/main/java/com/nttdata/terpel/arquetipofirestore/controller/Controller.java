@@ -1,8 +1,9 @@
 package com.nttdata.terpel.arquetipofirestore.controller;
 
 
-import com.nttdata.terpel.arquetipofirestore.persistence.entidades.User;
-import com.nttdata.terpel.arquetipofirestore.service.PersonService;
+import com.nttdata.terpel.arquetipofirestore.model.EstacionDto;
+import com.nttdata.terpel.arquetipofirestore.persistence.entidades.Estaciones;
+import com.nttdata.terpel.arquetipofirestore.service.EstacionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,26 +16,27 @@ import java.util.Optional;
 public class Controller {
 
     @Autowired
-    private PersonService personService;
+    private EstacionService estacionService;
 
     @GetMapping("/all")
-    public List<com.nttdata.terpel.arquetipofirestore.model.User> getAllPerson() {
-        return personService.retrieveAll();
+    public List<EstacionDto> getAllPerson() {
+        return estacionService.retrieveAll();
     }
 
     @GetMapping("/get/{id}")
-    public Optional<User> getPerson(@PathVariable("id") String id) {
-        return personService.get(id);
+    public Optional<Estaciones> getPerson(@PathVariable("id") String id) {
+        return estacionService.get(id);
     }
 
     @PostMapping("/save")
-    public User addPerson(@RequestBody User person){
-        return personService.save(person);
+    public String addPerson(@RequestBody Estaciones person){
+        estacionService.save(person);
+        return "guardado";
     }
 
     @DeleteMapping("/delete")
-       void delete(@RequestBody User person) {
-        personService.delete(person);
+       void delete(@RequestBody Estaciones person) {
+        estacionService.delete(person);
 
     }
 

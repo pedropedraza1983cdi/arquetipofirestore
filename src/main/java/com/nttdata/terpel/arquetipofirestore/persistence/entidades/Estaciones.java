@@ -9,12 +9,13 @@ import org.springframework.data.annotation.Id;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "books")
-public class User {
+@Entity(name = "estaciones")
+public class Estaciones {
 
     @Id
-    private String id;
-    private String author;
-    private String title;
-    private Integer year;
+    private Long id;
+    private boolean acumulacion;
+    private Integer estacion;
+    private boolean reclamacion;
+    private Integer traduccion;
 }

@@ -6,6 +6,8 @@ spring:
       project-id: ${GCP_PROJECT_ID}
       credentials:
         location: file:${GCP_APP_CREDENTIALS}
+      datastore:
+        namespace: ${GCP_DATASTORE_NAMESPACE}
 service:
   dateFormat: yyyy-MM-dd hh:mm:ss
   controller:
