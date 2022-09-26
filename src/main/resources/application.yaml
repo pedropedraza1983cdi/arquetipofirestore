@@ -12,9 +12,9 @@ spring:
         label: master
       gcp:
         credentials:
-          location: classpath:keyfirestore.json
+          location: {.json}
         firestore:
-          project-id: ${PROJECT_ID:seventh-botany-349817}
+          project-id: {}
           enabled: true
 service:
   dateFormat: yyyy-MM-dd hh:mm:ss
